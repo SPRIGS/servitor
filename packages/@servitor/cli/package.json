@@ -1,0 +1,17 @@
+{
+    "name": "@servitor/cli",
+    "version": "0.1.0",
+    "description": "Servitor CLI",
+    "main": "index.js",
+    "preferGlobal": true,
+    "bin": {
+        "servitor": "bin/index.js"
+    },
+    "dependencies": {
+        "chalk": "3.0.0",
+        "enquirer": "^2.3.0"
+    },
+    "devDependencies": {
+        "typescript": "3.8.3"
+    }
+}

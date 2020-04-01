@@ -1,0 +1,8 @@
+node_modules
+.DS_Store
+.vcode
+.idea
+.cache
+lerna
+lerna-debug.log
+packages/@servitor/cli/bin/*

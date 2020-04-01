@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "author": {
+    "name": "Kreshnik Hasanaj",
+    "email": "kreshnik.hasanaj@gmail.com",
+    "url": "https://www.sprigs.eu"
+  },
+  "workspaces": [
+    "packages/@servitor/*"
+  ],
+  "version": "0.1.0",
+  "scripts": {
+    "app": "node packages/@servitor/cli/bin/index.js",
+    "build": "parcel build packages/@servitor/cli/index.ts -d packages/@servitor/cli/bin --target node",
+    "watch": "parcel watch packages/@servitor/cli/index.ts -d packages/@servitor/cli/bin --target node"
+  },
+  "devDependencies": {
+    "@types/node": "13.9.8",
+    "lerna": "3.20.2"
+  }
+}

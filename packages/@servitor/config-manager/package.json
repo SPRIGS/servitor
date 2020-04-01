@@ -1,0 +1,13 @@
+{
+    "name": "@servitor/config-manager",
+    "version": "0.1.0",
+    "description": "Servitor config manager",
+    "main": "index.js",
+    "preferGlobal": true,
+    "bin": {
+        "servitor": "bin/index.js"
+    },
+    "dependencies": {
+        "dotenv": "6.1.0"
+    }
+}
