@@ -15,7 +15,7 @@
     "watch": "parcel watch packages/@servitor/cli/index.ts -d packages/@servitor/cli/bin --target node"
   },
   "devDependencies": {
-    "@types/node": "13.9.8",
+    "@types/node": "13.11.0",
     "lerna": "3.20.2"
   }
 }

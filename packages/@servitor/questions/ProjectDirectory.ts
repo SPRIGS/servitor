@@ -6,7 +6,7 @@ class ProjectDirectory extends Question {
         super();
         this.name = "directory.project";
         this.type = "input";
-        this.message = "Where should the project be created?";
+        this.message = "What is the project directory?";
     }
 
 }

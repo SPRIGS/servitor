@@ -1,0 +1,12 @@
+{
+  "name": "@servitor/logger",
+  "version": "0.1.0",
+  "description": "Servitor Logger",
+  "main": "index.ts",
+  "dependencies": {
+    "chalk": "3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "3.8.3"
+  }
+}

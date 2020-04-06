@@ -6,7 +6,8 @@ import ConfigManager from "../config-manager";
 import AddApacheVHostTask from "../tasks/AddApacheVHostTask"
 import AddToHostTask from "../tasks/AddToHostTask"
 import DownloadRepositoryTask from "../tasks/DownloadRepositoryTask"
-import chalk from "chalk";
+
+import Logger from "../logger";
 
 import Task from "../tasks/Task";
 
@@ -42,20 +43,22 @@ class CLI {
     }
 
     setup(){
-        this.prompt().then(this.execute).catch((reject) => console.log(reject));
+        this.prompt().then(() => this.execute()).catch((reject) => console.log(reject));
     }
 
     async prompt(){
         for(const task of this._tasks) {
             task.setup();
-            console.log(chalk.gbBlue.black('Task'),chalk.bgGreen.black(task.description));
+            Logger.log(
+               `Task ${task.description}`
+            );
             await prompt(task.questions).then((answers) => {
                 task.answers = answers;
             });
         }
-    },
+    }
     
-    execute(){
+    async execute(){
         this._tasks.forEach(task => {
             task.execute()
         });

@@ -1,6 +1,9 @@
 /// <reference path="../node_modules/@types/fs-extra/index.d.ts" />
 
 import fs from "fs-extra";
+
+import Logger from "../logger";
+
 import TaskInterface from "./TaskInterface";
 import Task from "./Task";
 
@@ -26,14 +29,14 @@ class AddToHostTask extends Task implements TaskInterface {
             try {
                 fs.accessSync(this.answers.file.hostFile, fs.constants.R_OK | fs.constants.W_OK);
                 fs.appendFile(
-                  this.hostFile,
-                    `127.0.0.1    ${this.answers.url}`,
+                    this.answers.file.hostFile,
+                    `127.0.0.1    ${this.answers.url}\n`,
                   error => {
                     if (error) return reject(error);
+                    Logger.success(`The URL was successfully added to the host file`);
                     resolve();
                   }
                 );
-
             } catch (err) {
                 return reject(err);
             }
